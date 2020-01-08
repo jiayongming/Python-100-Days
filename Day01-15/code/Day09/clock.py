@@ -4,7 +4,8 @@ from time import time, localtime, sleep
 class Clock(object):
     """数字时钟"""
 
-    def __init__(self, hour=0, minute=0, second=0):
+    def __init__(self, yeah=0,hour=0, minute=0, second=0):
+        self._yeah = yeah
         self._hour = hour
         self._minute = minute
         self._second = second
@@ -12,7 +13,7 @@ class Clock(object):
     @classmethod
     def now(cls):
         ctime = localtime(time())
-        return cls(ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
+        return cls(ctime.tm_year,ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
 
     def run(self):
         """走字"""
@@ -28,8 +29,8 @@ class Clock(object):
 
     def show(self):
         """显示时间"""
-        return '%02d:%02d:%02d' % \
-               (self._hour, self._minute, self._second)
+        return '%02d年:%02d:%02d:%02d' % \
+               (self._yeah, self._hour, self._minute, self._second)
 
 
 def main():

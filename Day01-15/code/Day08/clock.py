@@ -43,7 +43,7 @@ class Clock(object):
 
 if __name__ == '__main__':
     # clock = Clock(hour=10, minute=5, second=58)
-    clock = Clock()
+    clock = Clock(hour=10, minute=6, second=10)
     while True:
         os.system('clear')
         print(clock.show())
